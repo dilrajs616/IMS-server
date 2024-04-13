@@ -1,0 +1,56 @@
+{
+    "business": {
+        "signup": {
+            "endpoint": "/user/signup",
+            "input_data": ["business", "email", "name", "password"],
+            "return": "jwt token with user info"
+        },
+        "login": {
+            "endpoint": "/user/login",
+            "input_data": ["business_id", "email", "role", "password"],
+            "return": "jwt token with user info"
+        },
+        "signout": {
+            "endpoint": "/user/<business_id>/signout",
+            "input": false,
+            "return":"success = true"
+        },
+        "add_employee": {
+            "endpoint": "/user/<business_id>/add_employee",
+            "input_data": ["name", "email", "role", "password"],
+            "return": "success = true"
+        },
+        "fetch_employees": {
+            "endpoint": "/business/<business_id>/fetch_employees",
+            "input_data": false,
+            "return": "employee_data_list"
+        },
+        "change_password": {
+            "endpoint": "/user/<business_id>/<employee_id>/change-password",
+            "input_data": ["old_password", "new_password"],
+            "return": "success = true"
+        },
+        "remove_employee": {
+            "endpoint": "/user/<business_id>/<employee_id>/remove",
+            "input_data": false,
+            "return":"success = true"
+        }
+    },
+    "items": {
+        "add_item": {
+            "endpoint": "/item/<business_id>/add",
+            "input_data": ["item_name", "quantity"],
+            "return":"success = true"
+        },
+        "fetch_items": {
+            "endpoint": "/item/<business_id>/fetch",
+            "input_data": false,
+            "return": "items_list"
+        },
+        "delete_item": {
+            "endpoint": "/item/<business_id>/<item_id>/delete",
+            "input_data": false,
+            "return":"success = true"
+        }
+    }
+}

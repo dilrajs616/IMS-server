@@ -1,0 +1,19 @@
+curl -X POST -H "Content-Type: application/json" -d "{\"email\":\"example@example.com\",\"name\":\"John Doe\",\"business\":\"My Business\",\"password\":\"your_password\"}" http://127.0.0.1:5000/user/signup
+
+curl -X POST -H "Content-Type: application/json" -d "{\"name\":\"John Doe\", \"email\":\"johndoe@example.com\", \"role\":\"employee\", \"password\":\"secretpassword\"}" http://127.0.0.1:5000/user/BIZ01/add_employee
+
+curl -X POST -H "Content-Type: application/json" -d "{\"business_id\":\"BIZ01\", \"email\":\"johndoe@example.com\", \"password\":\"secretpassword\", \"role\":\"employee\"}" http://127.0.0.1:5000/user/login
+
+curl -X GET http://127.0.0.1:5000/business/BIZ01/fetch_employees
+
+curl -X POST http://127.0.0.1:5000/user/BIZ01/EMP02/remove
+
+curl -X POST -H "Content-Type: application/json" -d "{\"old_password\":\"secretpassword\", \"new_password\":\"new_password\"}" http://127.0.0.1:5000/user/BIZ01/EMP02/change-password
+
+curl -X POST -H "Content-Type: application/json" -d "{\"item_name\":\"Product A\", \"current_stock\": 100, \"threshold_stock\": 10}" http://127.0.0.1:5000/item/add
+
+curl -X GET -H "Content-Type: application/json" http://127.0.0.1:5000/item/fetch
+
+curl -X POST -H "Content-Type: application/json" http://127.0.0.1:5000/item/ITEM02/delete
+
+curl -X POST -H "Content-Type: application/json" -d "{\"product_name\":\"Product A\", \"batch_size\": 800, \"items\": {\"item1\": 20, \"item2\": 50, \"item3\": 90}}" http://127.0.0.1:5000/product/BIZ01/add
